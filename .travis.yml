@@ -1,4 +1,5 @@
 sudo: required
+dist: focal
 services:
   - docker
 env:
@@ -6,7 +7,7 @@ env:
     - SHA=$(git rev-parse HEAD)
     - CLOUDSDK_CORE_DISABLE_PROMPTS=1
 before_install:
-  - CLOUDSDK_PYTHON=python3.11
+  - CLOUDSDK_PYTHON=python3.8
   - openssl aes-256-cbc -K $encrypted_a9e4047c7a17_key -iv $encrypted_a9e4047c7a17_iv -in multi-k8s-450420-f96410ce36a1.json.enc -out multi-k8s-450420-f96410ce36a1.json -d
   - curl https://sdk.cloud.google.com | bash > /dev/null;
   - source $HOME/google-cloud-sdk/path.bash.inc
