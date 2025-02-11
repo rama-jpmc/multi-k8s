@@ -7,7 +7,7 @@ docker push rmahajanam/multi-server:latest
 docker push rmahajanam/multi-server:$SHA
 docker push rmahajanam/multi-worker:latest
 docker push rmahajanam/multi-worker:$SHA
-#
+###
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=ramahajanam/multi-server:$SHA
 kubectl set image deployments/client-deployment client=ramahajanam/multi-client:$SHA
